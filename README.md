@@ -132,7 +132,7 @@ Now it's getting a little uglier. And that's with the benefit of
 interpolation. If we were concatenating all of these strings, even
 worse!
 
-We don't want all this HTMl code in our JavaScript functions. First, it
+We don't want all this HTML code in our JavaScript functions. First, it
 just doesn't belong there. Putting a presentation concern inside a
 function whose purpose is to parse data is a violation of [SoC](https://en.wikipedia.org/wiki/Separation_of_concerns) and just bad code organization.
 
@@ -293,3 +293,5 @@ separation of concerns and write modular, well-organized code.
 
 - [Handlebars](http://handlebarsjs.com/)
 - [MDN: AJAX](https://developer.mozilla.org/en-US/docs/AJAX)
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/javascript-turning-api-responses-into-views-with-handlebars'>Turning API Responses Into Views </a> on Learn.co and start learning to code for free.</p>
