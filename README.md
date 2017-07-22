@@ -177,7 +177,7 @@ Keep in mind that the variable names between the double-curly-brace
 delimiters should match the names of the properties of the context
 object, in this case, our JSON response.
 
-Note that rather than build each list item sepately in a loop, we're
+Note that rather than build each list item separately in a loop, we're
 making use of the `{{#each}}` helper to build our list for us based on
 the array of objects we pass in.
 
@@ -293,3 +293,5 @@ separation of concerns and write modular, well-organized code.
 
 - [Handlebars](http://handlebarsjs.com/)
 - [MDN: AJAX](https://developer.mozilla.org/en-US/docs/AJAX)
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/javascript-turning-api-responses-into-views-with-handlebars'>Turning API Responses Into Views </a> on Learn.co and start learning to code for free.</p>
