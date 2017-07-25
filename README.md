@@ -150,7 +150,7 @@ receive a new stack of books. We need a *template*.
 
 ## Handlebars Templatess
 
-[Handlebars](http://handlebarsjs.com/) is a template engine **that** gives us a way to build HTML templates separately from
+[Handlebars](http://handlebarsjs.com/) is a template engine that gives us a way to build HTML templates separately from
 our code and allow us to use those templates to dynamically update the DOM.
 
 Creating a Handlebars template is simple. We just create the HTML that
