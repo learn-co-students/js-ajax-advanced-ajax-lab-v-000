@@ -132,7 +132,7 @@ Now it's getting a little uglier. And that's with the benefit of
 interpolation. If we were concatenating all of these strings, even
 worse!
 
-We don't want all this HTMl code in our JavaScript functions. First, it
+We don't want all this HTML code in our JavaScript functions. First, it
 just doesn't belong there. Putting a presentation concern inside a
 function whose purpose is to parse data is a violation of [SoC](https://en.wikipedia.org/wiki/Separation_of_concerns) and just bad code organization.
 
