@@ -12,6 +12,8 @@ function getRepositories() {
     const repoList = template(repos)
     document.getElementById("repositories").innerHTML = repoList
   }
-  document.addEventListener("DOMContentLoaded", function(event) {
+  document.addEventListener("DOMContentLoaded", function() {
     Handlebars.registerPartial("authorPartial", document.getElementById("author-partial-template").innerHTML)
   });
+
+
