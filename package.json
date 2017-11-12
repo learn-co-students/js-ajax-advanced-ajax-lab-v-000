@@ -2,10 +2,6 @@
   "name": "turning-api-responses-into-views-with-handlebars",
   "version": "0.1.0",
   "description": "Get responses from an HTTP endpoint and render them on a page with JavaScript",
-  "engines": {
-    "node": "6.x",
-    "npm": "3.x"
-  },
   "main": "index.js",
   "scripts": {
     "test": "mocha -R mocha-multi --reporter-options nyan=-,json=.results.json"
