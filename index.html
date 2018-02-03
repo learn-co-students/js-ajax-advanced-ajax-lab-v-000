@@ -5,7 +5,40 @@
   </head>
   <body>
     <main id="main">
+      <!-- this is how we trigger the request and display the data - first, trigger request  -->
+      <a href="#" onclick="getRepositories()">Get Repositories</a>
+      <!-- now, display the data -->
+      <div id="repositories"></div>
     </main>
+    <!-- Creating a Handlebars template is simple. We just create the HTML that
+    we want within a script tag, and use the {{}} delimiters to hold
+    places for data. -->
+    <!-- Keep in mind that the variable names between the double-curly-brace
+    delimiters should match the names of the properties of the context
+    object, in this case, our JSON response. -->
+
+    <script id="repository-template" type="text/x-handlebars-template">
+      <ul>
+       {{#each this}}
+         <li>
+           <h2><a href="{{html_url}}">{{name}}</a></h2>
+    <!-- note how partials are written. We are passing the OWNER to the partial template -->
+           {{> authorPartial owner }}
+           <p>Watchers: {{watchers_count}}</p>
+           <p>Forks: {{forks_count}}</p>
+           <p>Issues: {{open_issues_count}}</p>
+         </li>
+        {{/each}}
+      </ul>
+    </script>
+
+    <script id="author-partial-template" type="text/x-handlebars-template">
+      <section>
+        <header><h4>Created By {{login}}</h4></header>
+        <img src="{{avatar_url}}" height="32" width="32">
+      </section>
+    </script>
+
     <script src="handlebars.js"></script>
     <script src="index.js"></script>
   </body>
