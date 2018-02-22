@@ -15,9 +15,7 @@ structure but filling it in with new data.
 
 Think about a bookstore. That's a place where you can go to buy books.
 Like, physically. Like a grocery store but there's a coffee shop inside
-and books instead of food. Picturing it?
-
-![louie](http://i.giphy.com/h01OpEeFWverS.gif)
+and books instead of food.
 
 Okay. So the basic unit of display in a bookstore is a bay of shelves.
 Each bay has a number of shelves that fit a number of books. A certain
