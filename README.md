@@ -29,8 +29,8 @@ books that change. So the bay is the structure and the books are the
 data.
 
 Similarly, our web pages are built up of chunks of markup (structure),
-with values (data). And when we get new data via an XHR request, we
-generally are outputting that new data within an already defined
+with values (data). And when we get new data via an XMLHttpRequest, or 
+XHR, we generally are outputting that new data within an already defined
 structure.
 
 ![jon stewart](http://i.giphy.com/qzIYGsxePPyP6.gif)
