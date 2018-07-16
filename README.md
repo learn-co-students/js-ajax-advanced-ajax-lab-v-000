@@ -29,7 +29,7 @@ books that change. So the bay is the structure and the books are the
 data.
 
 Similarly, our web pages are built up of chunks of markup (structure),
-with values (data). And when we get new data via an XMLHttpRequest, or 
+with values (data). And when we get new data via an XMLHttpRequest, or
 XHR, we generally are outputting that new data within an already defined
 structure.
 
@@ -146,7 +146,7 @@ build a new bay, and we had to construct it by hand every single time.
 We need a way to have a pre-fabricated bay of shelves ready to go and
 receive a new stack of books. We need a *template*.
 
-## Handlebars Templatess
+## Handlebars Templates
 
 [Handlebars](http://handlebarsjs.com/) is a template engine that gives us a way to build HTML templates separately from
 our code and allow us to use those templates to dynamically update the DOM.
