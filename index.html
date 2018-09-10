@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Turning API Responses into Views with Handlebars</title>
-  </head>
-  <body>
-    <main id="main">
-    </main>
-    <script src="handlebars.js"></script>
-    <script src="index.js"></script>
-  </body>
+
+<head>
+  <title>Turning API Responses into Views with Handlebars</title>
+  <style>
+    body { background-color: aliceblue;}
+    a { text-decoration: none;
+        text-transform: uppercase;
+        color: black;}
+    img { border: 2px solid;
+          border-radius: 5px;}
+  </style>
+</head>
+
+<body>
+  <main id="main">
+    <h1><a href="#" onclick="getRepositories()">Get Repositories</a></h1>
+    <script id="repository-template" type="text/x-handlebars-template">
+      <ul>
+     {{#each this}}
+       <li>
+         <h2><a href="{{html_url}}">{{name}}</a></h2>
+         {{> authorPartial owner }}
+         <p>Description: {{description}}</p>
+         <p>Watchers: {{watchers_count}}</p>
+         <p>Forks: {{forks_count}}</p>
+         <p>Issues: {{open_issues_count}}</p>
+       </li>
+      {{/each}}
+    </ul>
+  </script>
+    <script id="author-partial-template" type="text/x-handlebars-template">
+      <section>
+      <header><h4>Created By {{login}}</h4></header>
+      <img src="{{avatar_url}}" height="32" width="32">
+    </section>
+  </script>
+    <div id="repositories"></div>
+  </main>
+  <script src="handlebars.js"></script>
+  <script src="index.js"></script>
+</body>
+
 </html>
