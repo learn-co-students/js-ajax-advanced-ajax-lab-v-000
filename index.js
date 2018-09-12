@@ -12,3 +12,8 @@ function showRepositories(event, data) {
     .join('')}</ul>`;
   document.getElementById('repositories').innerHTML = repoList;
 }
+
+document.addEventListener('DOMContentLoaded', function(event) {
+  Handlebars.registerPartial('authorPartial',
+  document.getElementById('author-partial-template').innerHTML)
+})
