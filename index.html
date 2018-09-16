@@ -5,8 +5,40 @@
   </head>
   <body>
     <main id="main">
+      <a href="#" onclick="getRepositories()">Get Repositories</a>
+      <div id="repositories"></div>
     </main>
     <script src="handlebars.js"></script>
     <script src="index.js"></script>
+    <script id="repository-template" type="text/x-handlebars-template">
+      <ul>
+       {{#each this}} <!-- # marks start of block of each block helper and this refers to the object being iterated over (the context, argument passed to the template function, which is the repos array of repo objects) -->
+         <li> <!-- for each repo object in repos array, generate <li> containing: -->
+           <h2><a href="{{html_url}}">{{name}}</a></h2> <!-- <h2> header w/ <a> link inside it whose href attribute value is the string URL to the current repo on GitHub and whose clickable text is the name of the current repo -->
+           {{> authorPartial owner }} <!-- render the authorPartial partial, passing in the owner property of the current repo object (this in the iteration refers to each repo object in the repos array) -->
+           <p>Watchers: {{watchers_count}}</p> <!-- {{watchers_count}} is placeholder for value corresponding to the watchers_count key of current repo object -->
+           <p>Forks: {{forks_count}}</p> <!-- {{forks_count}} is placeholder for value corresponding to the forks_count key of current repo object -->
+           <p>Issues: {{open_issues_count}}</p> <!-- {{open_issues_count}} is placeholder for value corresponding to the open_issues_count key of current repo object -->
+         </li>
+        {{/each}} <!-- / marks end of block of each block helper -->
+      </ul>
+    </script>
+    <script id="author-partial-template" type="text/x-handlebars-template">
+      <section>
+        <header><h4>Created By {{login}}</h4></header> <!-- {{login}} is placeholder for value corresponding to the login key of the owner property of a repo object -->
+        <img src="{{avatar_url}}" height="32" width="32"> <!-- {{avatar_url}} is placeholder for value corresponding to the avatar_url key of the owner property of a repo object -->
+      </section>
+    </script>
   </body>
 </html>
+<!-- clicking the link Get Repositories triggers the getRepositories() function
+We're triggering the request to list a GitHub user's public repositories
+<div id="repositories"> is where the list of repos will be displayed
+
+The variables in the template must match the properties (keys) of each repo object in the repos array of objects,
+so this means that a repo object (referred to as this inside the each block helper iteration)
+has keys of html_url, name, owner, watchers_count, fork_count and open_issues_count
+The owner property of the current repo in the iteration is passed to the call to render authorPartial partial,
+so within the <script id="author-partial-template"...>, the variables login and avatar-url
+are placeholders for the values corresponding to the login and avatar_url keys of the owner property,
+which is a key/value pair of the repo object
