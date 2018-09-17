@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function(event) {
   Handlebars.registerPartial(
     'authorPartial',
-    document.getElementById('author-partial-template').innerHTML;
+    document.getElementById('author-partial-template').innerHTML
   );
 });
 
 function getRepositories() {
   const req = new XMLHttpRequest();
   req.addEventListener('load', showRepositories);
-  req.open('GET', 'https://api.github.com/users/octocat/repos');
+  req.open('GET', 'https://api.github.com/users/jenna424/repos');
   req.send();
 }
 
