@@ -4,7 +4,9 @@
   "description": "Get responses from an HTTP endpoint and render them on a page with JavaScript",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -R mocha-multi --reporter-options nyan=-,json=.results.json"
+    "test": "mocha -R mocha-multi --reporter-options nyan=-,json=.results.json",
+    "lite": "lite-server --port 10001",
+    "start": "npm run lite"
   },
   "repository": {
     "type": "git",
