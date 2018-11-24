@@ -8,8 +8,7 @@
       <a href="#" onclick="getRepositories()">Get Repositories</a>
       <div id="repositories"></div>
     </main>
-    <script src="handlebars.js"></script>
-    <script src="index.js"></script>
+
     <script id="repository-template" type="text/x-handlebars-template">
       <ul>
         {{#each this}}
@@ -31,5 +30,9 @@
         <img src="{{avatar_url}}" height="32" width="32">
       </section>
     </script>
+
+    <script src="handlebars.js"></script>
+    <script src="index.js"></script>
+
   </body>
 </html>
