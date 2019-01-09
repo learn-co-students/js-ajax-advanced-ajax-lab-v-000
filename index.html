@@ -4,9 +4,45 @@
     <title>Turning API Responses into Views with Handlebars</title>
   </head>
   <body>
-    <main id="main">
-    </main>
-    <script src="handlebars.js"></script>
-    <script src="index.js"></script>
-  </body>
+  <main id="main">
+    <a href="#" onclick="getRepositories()">Get Repositories</a>
+    <div id="repositories"></div>
+  </main>
+
+<!--implement a handlebars template
+Keep in mind that the variable names between the double-curly-brace delimiters should match the names of the properties of the context object, in this case, our JSON response.
+
+Note that rather than build each list item separately in a loop, we're making use of the {{#each}} helper to build our list for us based on the array of objects we pass in.
+showRepositories function will recognize this
+
+And that's the power of using a template engine like Handlebars. The presentation, or HTML code, can be managed separately from the logic and data.
+-->
+<script id="repository-template" type="text/x-handlebars-template">
+  <ul>
+       <!--We're passing owner to the template, which is really this.owner, or the owner property of the current repository object since we are inside the {{#each}} block.-->
+       {{#each this}}
+         <li>
+           <h2><a href="{{html_url}}">{{name}}</a></h2>
+           {{> authorPartial owner }}
+           <p>Watchers: {{watchers_count}}</p>
+           <p>Forks: {{forks_count}}</p>
+           <p>Issues: {{open_issues_count}}</p>
+         </li>
+        {{/each}}
+      </ul>
+</script>
+
+<script id="author-partial-template" type="text/x-handlebars-template">
+      <section>
+        <header><h4>Created By {{login}}</h4></header>
+        <img src="{{avatar_url}}" height="32" width="32">
+      </section>
+</script>
+
+  <script src="handlebars.js"></script>
+  <script src="index.js"></script>
+
+
+
+</body>
 </html>
