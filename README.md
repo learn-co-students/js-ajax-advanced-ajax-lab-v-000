@@ -5,7 +5,7 @@
 1.  Explain how to update the DOM based on new data
 2.  Review writing and using Handlebars templates
 3.  Use Handlebars to update the DOM
-
+learn
 ## Introduction
 
 When we use XHR to make dynamic web applications, we often need to
