@@ -7,30 +7,38 @@
     <main id="main">
        <a href="#" onclick="getRepositories">Get Repositories</a>
        <div id="repositories"></div>
+
+       <script id="respository-template" type="text/x-handlebars-template">
+        <ul>
+         {{#each this}}
+         <li>
+           <h2><a href="{{html_url}}">{{name}}</a></h2>
+           <section>
+             <header><h4>Created By{{owner.login}}</h4></header>
+           <img src="{{owner.avatar_url}}" height="32 width="32">
+            </section>
+            <p>Watchers: {{watchers_count}}</p> 
+            <p>Forks: {{forks_count}}</p> 
+            <p>Issues: {{open_issues_count}}</p> 
+          
+            <!-- # of the objec of the array passed in. -->
+            <!-- #Keep in mind that the variable names between the double-curly-brace delimiters should match the names of the properties of the context object, in this case, our JSON respons -->
+         </li>
+
+         <script id="author-partial-template" type="text/x-handlebars-template">
+           <section>
+            <header><h4>Created By{{login}}</h4></header>
+            <img src="{{avatar_url}}" height="32" width="32">
+           </section>
+        </script>
+
+       {{/each}}
+        </ul>
+      </script>
+
     </main>
     <script src="handlebars.js"></script>
     <script src="index.js"></script>
-
-    <script id="respository-template" type="text/x-handlebars-template">
-      <ul>
-       {{#each this}}
-       <li>
-         <h2><a href="{{html_url}}">{{name}}</a></h2>
-         <section>
-           <header><h4>Created By{{owner.login}}</h4></header>
-         <img src="{{owner.avatar_url}}" height="32 width="32">
-          </section>
-          <p>Watchers: {{watchers_count}}</p> 
-          <p>Forks: {{forks_count}}</p> 
-          <p>Issues: {{open_issues_count}}</p> 
-        
-          <!-- # of the objec of the array passed in. -->
-          <!-- #Keep in mind that the variable names between the double-curly-brace delimiters should match the names of the properties of the context object, in this case, our JSON respons -->
-       </li>
-     {{/each}}
-      </ul>
-    
-    </script>
 
   </body>
 </html>
