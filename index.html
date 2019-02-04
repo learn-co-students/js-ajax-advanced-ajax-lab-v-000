@@ -10,8 +10,12 @@
     </main>
     <script src="handlebars.js"></script>
     <script src="index.js"></script>
+    
+    <!-- Handlebars template -->
       <script id="repository-template" type="text/x-handlebars-template">
        <ul>
+       // use the {{}} delimiters to hold places for data
+       //variable names between the double-curly-brace delimiters should match the names of the properties of the context object, in this case, our JSON response
         {{#each this}}
           <li>
             <h2><a href="{{html_url}}">{{name}}</a></h2>
