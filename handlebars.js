@@ -1,3 +1,6 @@
+document.addEventListener("DOMContentLoaded",function(event){
+  Handlebars.registerPartial("authorPartial",document.getElementById("author-partial-template").innerHTML)
+});
 /*!
 
  handlebars v4.0.5
