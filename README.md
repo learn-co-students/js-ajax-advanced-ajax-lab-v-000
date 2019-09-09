@@ -215,7 +215,7 @@ Let's add the owner information to our template.
      <li>
        <h2><a href="{{html_url}}">{{name}}</a></h2>
        <section>
-          <header><h4>Created By {{owner.login}}</h4></header>
+          <header><h4>Created By: {{owner.login}}</h4></header>
           <img src="{{owner.avatar_url}}" height="32" width="32">
        </section>
        <p>Watchers: {{watchers_count}}</p>
