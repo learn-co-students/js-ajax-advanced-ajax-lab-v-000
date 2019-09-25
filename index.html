@@ -5,6 +5,35 @@
   </head>
   <body>
     <main id="main">
+      <a href="#" onclick="getRepositories()">Get Repositories</a>
+      <div id="repositories">
+        <!-- Handlebars is a template engine that gives us a way to build HTML
+        templates separately from  our code and allow us to use those templates
+        to dynamically update the DOM -->
+        <script id="repository-template" type="text/x-handlebars-template">
+          <ul>
+           {{#each this}}
+             <li>
+               <h2><a href="{{html_url}}">{{name}}</a></h2>
+               <!-- Render the partial template via
+               the {{> authorPartial owner}} line -->
+               {{> authorPartial owner }}
+               <p>Watchers: {{watchers_count}}</p>
+               <p>Forks: {{forks_count}}</p>
+               <p>Issues: {{open_issues_count}}</p>
+             </li>
+            {{/each}}
+          </ul>
+        </script>
+        <!-- This author Handlebars partial may be reused, say for a list of
+        commits -->
+        <script id="author-partial-template" type="text/x-handlebars-template">
+          <section>
+            <header><h4>Created By {{login}}</h4></header>
+            <img src="{{avatar_url}}" height="32" width="32">
+          </section>
+        </script>
+      </div>
     </main>
     <script src="handlebars.js"></script>
     <script src="index.js"></script>
