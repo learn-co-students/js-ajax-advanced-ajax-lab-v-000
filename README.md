@@ -76,7 +76,7 @@ the response, so let's jump in to that and output our repositories to
 the page.
 
 ```js
-function showRepositories(event, data) {
+function showRepositories() {
   const repos = JSON.parse(this.responseText);
   const repoList = `<ul>${repos
     .map(r => '<li>' + r.name + '</li>')
@@ -99,7 +99,7 @@ just the name.
 Let's add the HTML URL as a link.
 
 ```js
-function showRepositories(event, data) {
+function showRepositories() {
   const repos = JSON.parse(this.responseText);
   const repoList = `<ul>${repos
     .map(r => '<li><a href="' + r.html_url + '">' + r.name + '</a></li>')
@@ -115,7 +115,7 @@ lines.
 Let's add the watcher, fork, and issues counts.
 
 ```js
-function showRepositories(event, data) {
+function showRepositories() {
   const repos = JSON.parse(this.responseText);
   const repoList =
     '<ul>' +
@@ -191,7 +191,7 @@ objects we pass in.
 Now let's update our `showRepositories` code to use the template.
 
 ```js
-function showRepositories(event, data) {
+function showRepositories() {
   const repos = JSON.parse(this.responseText);
   const src = document.getElementById('repository-template').innerHTML;
   const template = Handlebars.compile(src);
